@@ -1,0 +1,85 @@
+h1,h2,h3,h4,h5,h6{
+    margin: 0 ;    
+}
+
+h1{
+    font:{
+        family: $font1;
+        size: 6vw;
+        weight:900;
+    }
+}
+
+h2{
+    font:{
+        family: $font1;
+        size: 4vw;
+        weight:700;
+    }
+}
+
+h3{ 
+    font:{
+        family: $font1;
+        size: 3.5vw;
+        weight:700;
+    }
+}
+
+h4{
+    font:{
+        family: $font1;
+        size: 3vw;
+        weight:700;
+    }
+}
+ 
+h5{
+    font:{
+        family: $font1;
+        size: 2vw;
+        weight:700;
+    }
+}
+
+h6{
+    font:{
+        family: $font2;
+        size: 1.5vw;
+        weight:400;
+    }
+}
+
+p{ 
+    font:{
+        family: $font2;
+        size: 2vw;
+        weight:400;
+    }
+    color: $gray1; 
+    line-height:2em;
+    @include MQ(L) {
+        font:{
+            size: 1.2vw;
+        }
+    }
+    @include MQ(M) {
+        font:{
+            size: 1.6vw;
+        }
+    }
+}
+
+a{
+    text-decoration:none;
+}
+
+nav{
+    a{
+        font:{
+            family: $font2;
+            size: 1.1vw;
+            weight:400;
+        }
+    }
+}

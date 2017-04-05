@@ -1,18 +1,8 @@
 
 /**************************         
-PARTIALS
+IMPORT
 ***************************/     
-@import "../scss/partials/_header.scss";       
-@import "../scss/partials/_footer.scss";  
-@import "../scss/modules/_mediaqueries.scss"; // media queries - if needed 
-@import "../scss/modules/_custom.scss"; // media queries - if needed
-@import "../scss/modules/_fonts.scss"; // media queries - if needed
-@import "../scss/modules/_variables.scss"; // all global variables
-@import "../scss/modules/_fonts.scss"; // all fonts declaration
-@import "../scss/modules/_classes.scss"; // all resuable classes
-@import "../scss/modules/_base.scss"; // main structure of the site
-@import "../scss/modules/_mixins.scss"; // main structure of the site
-@import "../scss/modules/normalize.scss"; // main structure of the site
+@import "imports.scss"; // media queries - if needed 
 
 
 /**************************
@@ -23,11 +13,11 @@ TEMPLATES begin
         ! ! !    R E A D   T H I S    ! ! !  
         -----------------
          
-        It's recomended to use/create a custom css file (ore place them at the end of this file) 
+        It's recomended to use/create a custom css file (or place them at the end of this file) 
         to do you customizations in order to easily update the main css files without loosing your changes
         
         
-        > > Please take also a look at the documentation file.    
+        > > Please take also a look at the documentation file.       
         
          
          
@@ -67,358 +57,164 @@ TEMPLATES begin
 2. GENERAL ELEMENTS
 ------------------------------------------------*/
 html{
-    @include scrollbars(0.5em, $dark-gray);  
+    @include scrollbars(0.5em, $black);  
 }
 
 body{
     
     margin:0;
-    padding:0;
+    padding:0; 
 }
-
-h1,h2,h3,h4,h5,h6{
-    margin: 20px 0 10px ;
-}
-
-h1{
-    font-family: $font1;
-    font-size: 6vw;
-    font-weight: 900;
-}
-
-h2{
-    font-family: $font1; 
-    font-size: 4vw;
-    font-weight: 700;
-}
-
-h3{ 
-    font-family: $font1;
-    font-size: 3.5vw;
-    font-weight: 700;
-}
-
-h4{
-    font-family: $font1;
-    font-size: 3vw;
-    font-weight: 700;
-}
- 
-h5{
-    font-family: $font1;
-    font-size: 2vw;
-    font-weight: 700;
-}
-
-h6{
-    font-family: $font1;
-    font-size: 1.5vw;
-    font-weight: 400;
-}
-
-p{ 
-    font-family: $font2;
-    font-weight: 100; 
-    font-size: 2vw;
-    color: $dark-gray; 
-    line-height:2em;
-    @include MQ(L) {
-        font-size: 1.2vw;
-           
-    }
-    @include MQ(M) {
-        font-size: 1.6vw;
-    }
-}
-
-
-
-
-
 
 /*---------------------------------------------- 
 3. HOME PAGE
 ------------------------------------------------*/
 
-.header_img{
-    background-image: linear-gradient(transparent -60%, #fff), url("../../../assets/img/header_img.JPG");
-    background-size:cover;
-    background-position: center bottom;  
-    height:30vh;
-    width: 100vw;
-    margin:0;
 
-}
-.intoduction{
-    margin: auto; 
-    width: 70vw;  
-    .name_title{
-        color: $dark-gray;
-    }
-    .message{
-        p{
-            text-align: justify;
-            
-        }
-    }
-}
-
-
-.social_icons{
-    border-top: 1px solid $dark-gray;
-    width: 50vw;
-    margin: 15vh auto;
-    display: flex;
-    justify-content: center;
-    padding:2vw;
-    .svg{
-        background-position: center;
-        background-size:contain;
-        background-repeat: no-repeat;
-        width:3vw;
-        height:3vw;
-
-        margin:1vw;
-        &:first-child{ 
-            background-image:url("../../../assets/img/facebook.svg");
-        }
-        &:nth-child(2){
-            background-image:url("../../../assets/img/twitter.svg");
-        }
-        &:nth-child(3){
-            background-image:url("../../../assets/img/googleplus.svg");
-        }
-        &:nth-child(4){
-            background-image:url("../../../assets/img/vimeo.svg"); 
-        }
-    }
-}
-
-.direction_boxes{
-    display: block;
+.enterence{ 
+    background: $black;
+    height:100vh;
     position: fixed;
-    top:50vh;
-    &:hover{
+    transition: all 2s cubic-bezier(0.77, 0.1, 0.29, 0.74);
+    width: 0;
+    h1{
+        color:$white;
+
+    }
+
+    .container{
+        margin-left: 7vw;
+    }
+    .name_title{
+        margin-top: 6vh;
+        span{ 
+            transition: all .5s ease;
+            opacity: 0;
+            &:first-child{
+                font:{
+                    size:10vw;
+                }
+                margin-left: -.8vw;
+                display: block;
+                margin-top: 16vh;
+                line-height: 6vh;
+                transition-delay: 2.2s;
+                
+            }
+            &:nth-child(2){
+                font:{
+                    size:12.5vw;
+                }
+                display: block;
+                transition-delay: 2.7s;
+            }
+        }
+    }
+
+    .social_icons{
+
         a{
-            transform: translate(0px,0);
-            opacity:1;
+            width: 40px; 
+            height: 40px;
+            display: inline-block;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 30px;
+            opacity: 0;
+            &:hover{
+                box-shadow: inset 0px 0px 0px 1px #FFFFFF;
+                
+            }
+            &:first-child{
+                background-image:url('../img/facebook.svg');
+                transition: opacity 0.5s ease 3.2s, box-shadow 0.5s ease;
+            }
+            &:nth-child(2){
+                background-image:url('../img/twitter.svg');
+                transition: opacity 0.5s ease 3.4s, box-shadow 0.5s ease;
+            }
+            &:nth-child(3){
+                background-image:url('../img/instagram.svg');
+                transition: opacity 0.5s ease 3.6s, box-shadow 0.5s ease;
+            }
+            &:nth-child(4){
+                background-image:url('../img/linkedin.svg'); 
+                transition: opacity 0.5s ease 3.8s, box-shadow 0.5s ease;
+            }
         }
-    };
-    span{
-        height: 10px;
-        width: 0px;
-        /* background-color: black; */
-        display: block;
-        margin: 10px auto;
-        border-top: solid 5px #dcdcdc;
-        border-left: solid 15px transparent;
-        border-right: solid 15px transparent;
     }
-    a{
-        font-size: 1.25vw;
-        padding: 30px;
-        color:$light-gray;
-        text-decoration: none; 
-        font-family: $font1;  
-        letter-spacing: 0.1vw;
-        opacity: 0;
-        transition: all 0.3s ease;
-        transform: translate(-10px,0);
-        @include MQ(L) {
-        font-size: 1vw;
-        }
-        @include MQ(M) {
-            font-size: 1.4vw;
-        }
-        
-    }
-}
 
-.left_direction{
-    float: left;
-    left:-2vw;
-    transform: rotate(90deg);
-}
-
-.right_direction{
-    float:right;
-    right:-2vw;
-    transform: rotate(-90deg);
-}
- 
-
-
-/*---------------------------------------------- 
-4. PAINTING PAGE
-------------------------------------------------*/
-
-.paintings_section{
-    overflow-y: hidden;
-    overflow-x: scroll;
-    width: auto;
-    display: flex;
-    flex-wrap: nowrap;
-        height: 100vh;
-}
-
-.img_container{
-    height: 65vh;
-    margin: auto 20px;
-    display: flex;
-    position: relative;
-    flex: 1;
-    box-shadow: 5px 5px 11px rgba(0,0,0,.4);
-    .plus_button{
+    .navigation{
         position: absolute;
-        right:20px;
-        top:20px;
-        padding: 10px 0px;
-        background-color: rgba(255,255,255,0.9);
-        opacity: 0.3;
-        transition: all 0.3s ease;
-        z-index:15;
-        span{
-            padding: 10px 20px;
-            text-decoration: none; 
-        }
-        &:hover{
-            opacity:1;    
-        }
-    }
-    
-    .active{
-        opacity: 1!important;
-        transition: all 0.3s ease;
-    }
-
-    .details_box{
-        position: absolute;
-        width: calc(100% - 80px);
-        height: calc(100% - 80px);
-        background-color: rgba(255,255,255,.9);
-        color: #000;
-        margin: 20px;
-        padding: 20px;
-        opacity: 0;
-        transition: all 0.3s ease;
-        .border_box{
-            border: 1px solid #c2c2c2;
-            width: calc(100% - 40px);
-            height: calc(100% - 40px);
-            position: absolute;
-            z-index: 10;
-        }
-        .title{
-            padding:20px;
-        }
-    }
-
-    &:first-child{
-        top:0vh;
-    }
-    &:nth-child(2){
-        bottom:0vh;
-    }
-    &:nth-child(3){
-        top:10vh;
-    }
-    &:nth-child(4){
         bottom:5vh;
-    }
-    &:nth-child(5){
-        top:5vh;
-    }
-    &:nth-child(6){
-        bottom:12.5vh;
-    }
-    &:nth-child(7){
-        top:10vh;
-    }
-    &:nth-child(8){
-        bottom:2.5vh;
-    }
-    &:nth-child(9){
-        top:3vh;
-    }
-    &:nth-child(10){
-        bottom:6.5vh;
-    }
-    &:nth-child(11){
-        top:5vh;
-    }
-    &:nth-child(12){
-        bottom:15vh;
-    }
-    &:nth-child(13){
-        top:0vh;
-    }
-    &:nth-child(14){
-        bottom:2.5vh;
-    }
-    &:nth-child(15){
-        top:7.5vh;
-    }
-    &:nth-child(16){
-        bottom:6vh;
-    }
-    &:nth-child(17){ 
-        top:3vh;
-    }
-    &:nth-child(18){
-        bottom:12.5vh;
-    }
-    &:nth-child(19){
-        top:7vh;
-    }
-    &:nth-child(20){
-        bottom:3vh;
-    }
-    &:nth-child(21){
-        top:0vh;
-    }
-    &:nth-child(22){
-        bottom:11.5vh;
-    }
-    &:nth-child(23){
-        top:6vh;
-    }
-    &:nth-child(24){
-        bottom:4vh;
-    }
-    &:nth-child(25){
-        top:15vh;
-    }
-    &:nth-child(26){
-        bottom:13vh;
-    }
-    img{
-        height:100%; 
+        nav{
+            opacity:0;
+            transform:translate(0,20px); 
+            transition: all 0.5s 2.8s ease;
+            ul{
+                padding-left:0;
+                list-style: none;
+                display: flex;
+                width: 35vw;
+                li{
+                    text-align: center;
+                    flex-grow: 1;
+                    padding: 1vw;
+                    span{
+                        opacity: 1;
+                        transition:all 0.6s ease;
+                        border-top: 2px solid $gray3;  
+                        display: block;
+                        margin-top: -0.8vw;
+                        width: 0%;
+                    }
+                    &:hover{
+                        span{
+                            opacity:1;
+                            width: 100%;
+                        }
+                    }
+                    a{
+                        color:$white;  
+                        text-decoration:none;
+                    }
+                }
+            }
+        }
     }
 
+    &.enterence_open{
+        width: 60vw;  
+        .name_title{         
+            span{
+                &:first-child{
+                    font:{
+                        size:10vw;
+                    }
+                    margin-left: -.8vw;
+                    display: block;
+                    margin-top: 16vh;
+                    line-height: 6vh;
+                    opacity:1;
+                }
+                &:nth-child(2){
+                    font:{
+                        size:12.5vw;
+                    }
+                    display: block;
+                    opacity:1;
+                }
+            }
+        }
+        nav{
+            opacity:1;
+            transform: translate(0,0);
+        }
+        a{
+            opacity: 1;
+        }
+    }
 
-}
-
-.description_column{
-    height: 80vh;
-    position: relative;
-    width: 20vh;
-
-    top: 10vh;
-    padding-right: 20px; 
-    overflow-y: scroll;
-}
-.column_1{
-    left: 10vh;
-}
-.column_2{
-    left: 600vh;
-}
+ }
 
 
-/*---------------------------------------------- 
-21. PAGE INSTALL
-------------------------------------------------*/
-
-/************************** 
-
-***************************/ 
