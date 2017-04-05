@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Icons/Facebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M21.365296,40 L2.20769293,40 C0.988060547,40 0,39.0113263 0,37.792169 L0,2.2076758 C0,0.988208087 0.988215756,0 2.20769293,0 L37.7924623,0 C39.011629,0 40,0.988208087 40,2.2076758 L40,37.792169 C40,39.0114815 39.0114738,40 37.7924623,40 L27.5994211,40 L27.5994211,24.5097956 L32.7987676,24.5097956 L33.577296,18.472988 L27.5994211,18.472988 L27.5994211,14.6188678 C27.5994211,12.8710728 28.0847596,11.6800081 30.5910747,11.6800081 L33.7877594,11.6786112 L33.7877594,6.27924212 C33.234905,6.20567362 31.3373196,6.04130856 29.1296267,6.04130856 C24.5206952,6.04130856 21.365296,8.85460521 21.365296,14.0210074 L21.365296,18.472988 L16.1526015,18.472988 L16.1526015,24.5097956 L21.365296,24.5097956 L21.365296,40 L21.365296,40 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-547.000000, -1250.000000)">
+            <g id="Group" transform="translate(547.000000, 1250.000000)">
+                <g id="Icons/Facebook">
+                    <g id="Facebook">
+                        <use fill="#4460A0" xlink:href="#path-1"></use>
+                        <use fill="#51545D" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
