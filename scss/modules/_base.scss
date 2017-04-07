@@ -13,7 +13,7 @@ h1{
 h2{
     font:{
         family: $font1;
-        size: 4vw;
+        size: 3em;
         weight:700;
     }
 }
@@ -21,7 +21,7 @@ h2{
 h3{ 
     font:{
         family: $font1;
-        size: 3.5vw;
+        size: 1.9em;
         weight:700;
     }
 }
@@ -29,7 +29,7 @@ h3{
 h4{
     font:{
         family: $font1;
-        size: 3vw;
+        size: 1.5em;
         weight:700;
     }
 }
@@ -37,15 +37,16 @@ h4{
 h5{
     font:{
         family: $font1;
-        size: 2vw;
+        size: 1.2em;
         weight:700;
     }
+    margin-bottom: 3vh;
 }
 
 h6{
     font:{
-        family: $font2;
-        size: 1.5vw;
+        family: $font1;
+        size: 0.9em;
         weight:400;
     }
 }
@@ -53,21 +54,13 @@ h6{
 p{ 
     font:{
         family: $font2;
-        size: 2vw;
+        size: 0.8em;
         weight:400;
     }
-    color: $gray1; 
+    margin:0;
+    color: $gray4; 
     line-height:2em;
-    @include MQ(L) {
-        font:{
-            size: 1.2vw;
-        }
-    }
-    @include MQ(M) {
-        font:{
-            size: 1.6vw;
-        }
-    }
+   
 }
 
 a{
@@ -83,3 +76,62 @@ nav{
         }
     }
 }
+
+
+/*******************      Form       ********************/
+
+label{
+    font:{
+        family: $font1;
+        size: 0.9em;
+        weight:400;
+    }
+}
+
+input, textarea{
+    border:none;
+    border-bottom: 1px solid #000;
+    background-color: transparent;
+    width: 65%;
+    float:right;
+}
+
+.form_row{
+    margin-bottom: 4vh;
+}
+
+
+/*******************      Form  End     ********************/
+
+
+/*******************      Button       ********************/
+
+.btn{
+    border: 1px solid #000;
+    &:after{
+        position: absolute;
+        border-top: 1px solid #000;
+        top:50%;
+    }
+}
+
+button{
+    border:none;
+    background:none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

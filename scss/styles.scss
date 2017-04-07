@@ -61,7 +61,7 @@ html{
 }
 
 body{
-    
+    overflow-y: hidden;
     margin:0;
     padding:0; 
 }
@@ -108,7 +108,7 @@ body{
                     opacity: 1;
                     display: flex;
                     flex: 1; 
-                    transition-delay: 2.2s;
+                    
                     
                 }
                 &:nth-child(2){
@@ -118,7 +118,7 @@ body{
                     display: flex;
                     opacity: 1;
                     flex: 1;
-                    transition-delay: 2.7s;
+                    
                 }
             }
         }
@@ -176,7 +176,7 @@ body{
                     span{
                         opacity: 1;
                         transition:all 0.6s $transition-load;
-                        border-top: 2px solid $gray3;  
+                        border-top: 2px solid $white;  
                         display: block;
                         margin-top: -0.8vw;
                         width: 0%;
@@ -231,7 +231,7 @@ body{
     &.enterence_short{
         width: 20vw;
 
-        .container{
+        .container{ 
             margin-left: 4vw;
         }
         .name_title{  
@@ -239,7 +239,7 @@ body{
             h1{
                 display: flex;
                 flex-direction: row;       
-                span{
+                span{ 
 
                     &:first-child{
                         font:{
@@ -265,18 +265,33 @@ body{
             
             nav{
                 opacity:1;
-                
+                margin-left: -1vw;
                 ul{
                     width: 15vw;
                     flex-direction: column;
                     li{
                         text-align: left;
+
                         span{
                             
                         }
                         &:hover{
-                            span{
-                                width: 100%;
+                            &:first-child{
+                                span{
+                                    width:9vw;
+                                }
+                            }
+                            &:nth-child(2){
+                                span{
+                                    width:7vw;
+                                }
+                            }
+                            &:nth-child(3){
+                                span{
+                                    width:11vw;
+                                }
+                            }
+                            span{                                
                                 margin-left: -10%;
                             }
                         }
@@ -293,9 +308,7 @@ body{
     }
  }
 
-.testdiv{
-    height: 200vh;
-}
+
 
 
 .white_overlay{
@@ -305,19 +318,49 @@ body{
     background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
     z-index: 10;
     right: 0;
+    .svg{
+        
+        position: absolute;
+        top: 10vh;
+        z-index: 25;
+        right: 3vw;
+        #line{
+
+        }
+        #triangle{
+            animation: animate 3s ease infinite;
+
+            @keyframes animate{
+                0%{
+                    transform: translate(0,0);
+                    opacity: 0;
+                }
+                30%{
+                    opacity: 1;
+                }
+                70%{
+                    opacity: 1;
+                }
+                100%{
+                    transform: translate(40px,0);
+                    opacity: 0; 
+                }
+            }
+        }
+    }
 }
 
-.img_container{
-    margin-left: 70vw;
+.page_container{
+    
     display: flex;
     flex-flow: row;
-    transition: all 1.7s $transition-load 1s;
-    transform: translate(50vw,0);
+    transition: all 2s $transition-load ;
+    transform: translate(100vw,0);
     &.enterence_short_img{
-        margin-left: 30vw; 
+        transform:translate(30vw,0);
     }
     &.img_load_animation{
-        transform: translate(0,0);
+        transform: translate(70vw,0);
     }
     .img2{
         width: 35vw;
@@ -325,6 +368,65 @@ body{
         top: 20vh;
     }
     
+}
+
+#contact_about{
+    .contact_about_section{
+        display: flex;
+        flex-flow: row;
+        height: 100vh;
+        flex: 1;
+        justify-content: flex-end;
+        align-items: flex-end;
+        transition-delay: 0.5s;  
+        white_overlay{
+            background-color: transparent;
+        }
+        .section{
+            padding: 0 5vw; 
+            flex: 1;
+            margin-bottom: 5vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .about_section{
+            
+        }
+        .contact_section{
+            .divider{
+                border-top: 2px solid #000;
+                margin:6vh 0 3vh;
+                width: 100%;
+            }
+            .extra_information{
+                width: 100%;
+                .information_containers{
+                    margin-top: 3vh;
+                    flex: 1;
+                    display: flex;
+                    .extra_title{
+                        width: 40%;
+                        float:left; 
+                    }
+                    .extra_text{
+                        width: 60%;
+                        float:left;
+                    }
+                }
+            }   
+        }
+    }
+    .page_container{
+        &.enterence_short_img{
+            width: 80vw;
+        }
+    }
+    
+}
+
+.testdiv{
+    height: 100vh;
+    width: 300vw;
 }
 
 
