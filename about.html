@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="css/styles.css"> 
 	<title></title>
 </head>
-<body class="">
+<body  id="contact_about">
 
 
 
@@ -32,7 +32,7 @@
 				<nav> 
 					<ul>
 						<li>
-							<a href="/photography">Photography</a>
+							<a href="photography">Photography</a>
 							<span> </span>
 						</li>
 						<li>
@@ -40,7 +40,7 @@
 							<span> </span>
 						</li>
 						<li>
-							<a href="/about.html">Contact & About</a>
+							<a href="about.html">Contact & About</a>
 							<span> </span>
 						</li>
 					</ul>
@@ -64,7 +64,7 @@
 			</button>
 		</div>
 	</section>
-	<section id="contact_about">
+	<section>
 		<div class="page_container">
 			<div class="contact_about_section">
 				<div class="about_section section">
@@ -78,18 +78,18 @@
 					<form>
 						<div class="form_row">
 							<label for="full_name">Name:</label>
-							<input type="text" class="form-item form-input" id="full_name" aria-describedby="full_name"> 
+							<input type="text" class="form-item form-input" id="full_name" aria-describedby="full_name" required="required" data-error="Please,write your name"> 
 						</div>
 						<div class="form_row">
 							<label for="full_name">E-mail:</label>
-							<input type="email" class="form-item form-input" id="e-mail" aria-describedby="e-mail"> 
+							<input type="email" class="form-item form-input" id="e-mail" aria-describedby="e-mail" required="required" data-error="Please,write your e-mail"> 
 						</div>
 						<div class="form_row">
 							<label for="full_name">Message:</label>
-							<textarea class="form-item form-textarea" id="message" aria-describedby="message" rows="1" required="required" data-error="Please,leave us a message."></textarea>
+							<textarea class="form-item form-textarea" id="message" aria-describedby="message" rows="1" required="required" data-error="Please,write your message."></textarea>
 						</div>
 						<div>
-							<button class="btn" type="submit" value="Submit">Submit<span> </span></button>
+							<button class="btn" type="submit" value="Submit"><p>Submit</p><span> </span></button>
 						</div>
 					</form>
 					<div class="divider">

@@ -18,9 +18,13 @@ $( document ).ready(function() {
         if (scroll >= 20) {
             header.removeClass('enterence_open').addClass("enterence_short");
             page_container.addClass("enterence_short_img");
+            $("#triangle").css("animation-play-state", "paused");
+            $('.svg').prop('disabled', true);
         } else {
             header.removeClass("enterence_short").addClass('enterence_open');
             page_container.removeClass("enterence_short_img");
+            $("#triangle").css("animation-play-state", "running");
+            $('.svg').prop('disabled', false);
         }
     });
 ///////// Activating Animation on scroll End
@@ -38,11 +42,14 @@ $( document ).ready(function() {
 	});
 ///////// Horizontal Scrolling End
 
-	$('.svg').click(function(){
-		
+///////// Arrow Button pushing left to start exploring
+
+	$('.svg').click(function(){	
 		$('html, body').animate({scrollLeft : 400},2500);
 		return false;
 	});
+
+///////// Arrow Button pushing left to start exploring End
 });
 });
 
