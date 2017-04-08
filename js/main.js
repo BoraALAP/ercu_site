@@ -43,7 +43,10 @@ $( document ).ready(function() {
 ///////// Horizontal Scrolling End
 
 ///////// Arrow Button pushing left to start exploring
-
+	// $('.white_overlay').hover(function(){
+	// 	$('html, body').scrollLeft += 20;
+	// 	return false;
+	// });
 	$('.svg').click(function(){	
 		$('html, body').animate({scrollLeft : 400},2500);
 		return false;
