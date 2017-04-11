@@ -18,15 +18,15 @@
 	<section  class="enterence">
 		<div class="container">
 			<div class="name_title"><a href="">
-				<h1 class=""> <span class="name">ERSOY</span> <span class="lastname">ALAP</span></h1>
+				<h1 class=""> <span class="name">ERSOY ALAP</span></h1>
 				</a>
 			</div>
-			<div class="social_icons">
+			<!-- <div class="social_icons">
 				<a href=""><div class="svg">  </div></a>
 				<a href=""><div class="svg">  </div></a>
 				<a href=""><div class="svg">  </div></a>
 				<a href=""><div class="svg">  </div></a>
-			</div>
+			</div> -->
 				
 			<div class="navigation">
 				<nav> 
@@ -68,66 +68,81 @@
 		<div class="page_container">
 			<div class="img_container">
 				<div class="img_box_2 img_box">
-					<div class="detail_box"><p>35x70 Painting</p></div>
 					<img class="img" src="img/paintings_2.JPG"/>
-				</div>
-				<div class="img_box_1 img_box">
 					<div class="detail_box"><p>35x70 Painting</p></div>
+				</div>
+				<div class="img_box_1 img_box">					
 					<img class="img" src="img/paintings_1.jpg"/>
-				</div>
-				<div class="img_box_3 img_box">
 					<div class="detail_box"><p>35x70 Painting</p></div>
+				</div>
+				<div class="img_box_1 img_box">					
 					<img class="img" src="img/paintings_4.JPG"/>
-				</div>
-				<div class="img_box_1 img_box">
 					<div class="detail_box"><p>35x70 Painting</p></div>
+				</div>
+				<div class="img_box_3 img_box">					
 					<img class="img" src="img/paintings_5.JPG"/>
-				</div>
-				<div class="img_box_2 img_box">
 					<div class="detail_box"><p>35x70 Painting</p></div>
+				</div>
+				<div class="img_box_2 img_box">					
 					<img class="img" src="img/paintings_10.JPG"/>
-				</div>
-				<div class="img_box_3 img_box">
 					<div class="detail_box"><p>35x70 Painting</p></div>
+				</div>
+				<div class="img_box_1 img_box">					
 					<img class="img" src="img/paintings_07.JPG"/>
-				</div>
-				<div class="img_box_2 img_box">
 					<div class="detail_box"><p>35x70 Painting</p></div>
+				</div>
+				<div class="img_box_2 img_box">					
 					<img class="img" src="img/paintings_13.JPG"/>
-				</div>
-				<div class="img_box_3 img_box">
 					<div class="detail_box"><p>35x70 Painting</p></div>
+				</div>
+				<div class="img_box_1 img_box">					
 					<img class="img" src="img/paintings_06.JPG"/>
-				</div>
-				<div class="img_box_1 img_box">
 					<div class="detail_box"><p>35x70 Painting</p></div>
+				</div>
+				<div class="img_box_3 img_box">					
 					<img class="img" src="img/paintings_12.JPG"/>
-				</div>
-				<div class="img_box_2 img_box">
 					<div class="detail_box"><p>35x70 Painting</p></div>
+				</div>
+				<div class="img_box_2 img_box">					
 					<img class="img" src="img/paintings_11.JPG"/>
-				</div>
-				<div class="img_box_3 img_box">
 					<div class="detail_box"><p>35x70 Painting</p></div>
+				</div>
+				<div class="img_box_1 img_box">					
 					<img class="img" src="img/paintings_17.JPG"/>
-				</div>
-				<div class="img_box_2 img_box">
 					<div class="detail_box"><p>35x70 Painting</p></div>
+				</div>
+				<div class="img_box_2 img_box">					
 					<img class="img" src="img/paintings_19.JPG"/>
-				</div>
-				<div class="img_box_3 img_box">
 					<div class="detail_box"><p>35x70 Painting</p></div>
+				</div>
+				<div class="img_box_1 img_box">					
 					<img class="img" src="img/paintings_14.JPG"/>
-				</div>
-				<div class="img_box_1 img_box">
 					<div class="detail_box"><p>35x70 Painting</p></div>
+				</div>
+				<div class="img_box_3 img_box">					
 					<img class="img" src="img/paintings_16.JPG"/>
+					<div class="detail_box"><p>35x70 Painting</p></div>
+				</div>
+				<div class="img_box_2 img_box">					
+					<img class="img" src="img/paintings_19.JPG"/>
+					<div class="detail_box"><p>35x70 Painting</p></div>
+				</div>
+				<div class="img_box_1 img_box">					
+					<img class="img" src="img/paintings_14.JPG"/>
+					<div class="detail_box"><p>35x70 Painting</p></div>
+				</div>
+				<div class="img_box_2 img_box">					
+					<img class="img" src="img/paintings_16.JPG"/>
+					<div class="detail_box"><p>35x70 Painting</p></div>
 				</div>
 			</div>
 		</div>
 	</section>
 
 <!-- Enterence Section Ends -->
+
+
+
 <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -136,7 +151,25 @@
 <script src="js/jquery.mousewheel.min.js"></script>
 <script src="js/main.js"></script>
 
+<script>
 
+///////// Horizontal Scrolling	
+	mql = window.matchMedia("(min-width: 768px)");
+    if (mql.matches) {
+    	$(function() {
+		   $("body").mousewheel(function(event, delta) {
+
+		      this.scrollLeft -= (delta * 5);
+		    
+		      event.preventDefault();
+
+		   });
+		});
+    } else {
+
+    }
+///////// Horizontal Scrolling End
+</script>
 
 
 </body>

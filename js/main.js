@@ -2,6 +2,7 @@
 $( document ).ready(function() {
 	var header = $(".enterence");
     var page_container = $(".page_container");
+    mql = window.matchMedia("(min-width: 768px)");
 ///////// Page Load Animation
     header.addClass("enterence_open");
     page_container.addClass("img_load_animation");
@@ -30,24 +31,14 @@ $( document ).ready(function() {
 ///////// Activating Animation on scroll End
 
 
-///////// Horizontal Scrolling	
-    $(function() {
-	   $("body").mousewheel(function(event, delta) {
 
-	      this.scrollLeft -= (delta * 5);
-	    
-	      event.preventDefault();
-
-	   });
-	});
-///////// Horizontal Scrolling End
 
 ///////// Arrow Button pushing left to start exploring
 	// $('.white_overlay').hover(function(){
 	// 	$('html, body').scrollLeft += 20;
 	// 	return false;
 	// });
-	$('.svg').click(function(){	
+	$('.svg').hover(function(){	
 		$('html, body').animate({scrollLeft : 400},2500);
 		return false;
 	});

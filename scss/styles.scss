@@ -61,7 +61,9 @@ html{
 }
 
 body{
-    overflow-y: hidden;
+    @include MQ(M){
+        overflow-y: hidden; 
+    }
     margin:0;
     padding:0; 
 }
@@ -72,54 +74,39 @@ body{
 
 
 .enterence{ 
-    background: $black;
-    height:100vh;
+    background: $white;
+    height:20vh;
+    width: 100vw;
     position: fixed;
-    transition: all 2s $transition-load;
-    width: 0;
+    transition: all 2s $transition-load; 
     z-index: 20;
-    h1{
-        
-
+    @include MQ(M){
+        height:100vh;
     }
-
     .container{
-        margin-left: 7vw;
+        @include MQ(M){
+            margin-left: 7vw;
+        }
         height: 100vh;
         display: flex;
         flex-direction: column;
-        transition: all .5s $transition-load; 
+        transition: all .5s $transition-load ; 
     }
     .name_title{
-        margin-top: 6vh;
-        transition: all .5s $transition-load;
+        margin-top: 1.5vh;
+        opacity: 0;
+        @include MQ(M){
+            margin-top: 10vh;
+        }
+        transition: all .8s $transition-load 0.3s;
         h1{
             display: flex;
-            flex-direction: column;
-            color:$white;
-            line-height: 10vw;
+            color:$black;
             span{ 
                 transition: all .5s $transition-load; 
                 opacity: 1;
-                &:first-child{
-                    font:{
-                        size:10vw;
-                    }
-                    opacity: 1;
-                    display: flex;
-                    flex: 1; 
-                    
-                    
-                }
-                &:nth-child(2){
-                    font:{
-                        size:12.5vw;
-                    }
-                    display: flex;
-                    opacity: 1;
-                    flex: 1;
-                    
-                }
+                display: flex;
+                flex: 1; 
             }
         }
     }
@@ -166,62 +153,61 @@ body{
         align-items: flex-end;
         nav{
             opacity:0;
-            transform:translate(0,20px); 
-            transition: all 0.7s $transition-load 2.8s;
+            margin-left: -1vw;
+            transition: all 0.7s $transition-load 0.5s;
             ul{
                 padding-left:0;
                 list-style: none;
                 display: flex;
+                flex-direction: column;
                 width: 35vw;
                 li{
-                    text-align: center;
-                    flex-grow: 1;
+                    text-align: left;
                     padding: 1vw;
                     span{
                         opacity: 1;
                         transition:all 0.6s $transition-load;
                         border-top: 2px solid $white;  
                         display: block;
-                        margin-top: -0.7em;
+                        margin-top: -0.8em;
                         width: 0%;
                     }
                     &:hover{
+                         &:first-child{
+                            span{
+                                width:7em;
+                            }
+                        }
+                        &:nth-child(2){
+                            span{
+                                width:7vw;
+                            }
+                        }
+                        &:nth-child(3){
+                            span{
+                                width:10vw;
+                            }
+                        }
                         span{
                             opacity:1;
                             width: 100%;
+                            margin-left: -1em;
                         }
-                    }
-                    a{
-                        color:$white;  
-                        text-decoration:none;
                     }
                 }
             }
         }
     }
 
+
+
     &.enterence_open{
-        width: 60vw;  
-        .name_title{         
-            span{
-                &:first-child{
-                    font:{
-                        size:10vw;
-                    }
-                    opacity: 1;
-                    display: flex;
-                    flex: 1;
-                }
-                &:nth-child(2){
-                    font:{
-                        size:12.5vw;
-                    }
-                    display: flex;
-                    opacity: 1;
-                    flex: 1;
-                }
-            }
+        .name_title{
+            opacity: 1;
         }
+        @include MQ(M){
+            width: 25vw;
+        }  
         nav{
             opacity:1;
             transform: translate(0,0);
@@ -230,75 +216,40 @@ body{
             opacity: 1;
             transform: translate(0,0); 
         }
-
     }
     &.enterence_short{
-        width: 20vw;
-
+        height:10vh;
+        @include MQ(M){
+            width: 25vw;
+            height: 100vh;
+        }
         .container{ 
-            margin-left: 4vw;
+            @include MQ(M){
+                margin-left: 4vw;
+            }
         }
         .name_title{  
-            
+            opacity: 1;
             h1{
                 display: flex;
                 flex-direction: row;       
                 span{ 
-                    font:{
-                            size:4.5vw;
-                        }
-                    opacity: 1; 
-                    flex: 1;
-                    display:flex;   
+                       
                     &:nth-child(2){
                         transition: color 0.5s $transition-load 0.5s;
                         padding-left: 0.7vw;
-                        color:$black;
-                    }
-                }
-            }
-        }
-        .navigation{
-            
-            nav{
-                opacity:1;
-                margin-left: -1vw;
-                ul{
-                    width: 15vw;
-                    flex-direction: column;
-                    li{
-                        text-align: left;
-
-                        span{
-                            
-                        }
-                        &:hover{
-                            &:first-child{
-                                span{
-                                    width:9vw;
-                                }
-                            }
-                            &:nth-child(2){
-                                span{
-                                    width:7vw;
-                                }
-                            }
-                            &:nth-child(3){
-                                span{
-                                    width:11vw;
-                                }
-                            }
-                            span{                                
-                                margin-left: -10%;
-                            }
+                        @include MQ(M){
+                            color:$black;
                         }
                     }
                 }
             }
         }
         .social_icons{
+            opacity: 1;       
+        }
+        nav{
             opacity: 1;
-            
         }
     }
  }
@@ -314,7 +265,6 @@ body{
     z-index: 10;
     right: 0;
     .svg{
-        
         position: absolute;
         top: 10vh;
         z-index: 25;
@@ -352,14 +302,13 @@ body{
 
 .page_container{
     display: flex;
-    flex-flow: row;
     transition: all 2s $transition-load ;
     transform: translate(100vw,0);
     &.enterence_short_img{
         transform:translate(30vw,0);
     }
     &.img_load_animation{
-        transform: translate(70vw,0);
+        transform: translate(35vw,0);
     }
     .img_container{
         display: flex;
@@ -369,37 +318,30 @@ body{
             display: flex;
             flex-direction: column;
             .detail_box{
-                padding:10px 30px;
-                background-color: $black;
-                box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
                 min-width: 35%;
                 display: flex;
                 align-self: flex-end;
-                margin: 2vh 0;
+                margin: 1vh 0;
                 justify-content: flex-end;
                 p{
-                    color: $white;
+                    color: $black;
                     text-align: right;
                 }
             }
             .img{
                 width: auto;
-                height: 50vh;
-                box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+                height: 70vh;
             }
         }
         .img_box_1{
             align-self: flex-start;
-            .detail_box{
-                order: 2;
-            }
         }
         .img_box_2{
-            align-self: center;
+            align-self: flex-end;
 
         }
         .img_box_3{
-            align-self: flex-end;
+            align-self: center;
             
         }
     }
@@ -412,21 +354,23 @@ body{
 }
 
 #contact_about{
+    overflow: auto;
+    overflow-x: hidden;
     .white_overlay{
-            background: transparent;
-            height: 25vh;
+            display: none;
         }
     .contact_about_section{
         display: flex;
-        flex-flow: row;
-        height: 100vh;
+        margin-top: 10vh;
         flex: 1;
-        justify-content: flex-end;
-        align-items: flex-end;
-        transition-delay: 0.5s;  
-        
+        transition-delay: 0.5s; 
+        flex-direction: column; 
+        margin-bottom: 10vh;
+        @include MQ (L){
+            flex-direction: row;
+        }
         .section{
-            padding: 0 5vw; 
+            padding: 0 2.5vw; 
             flex: 1;
             margin-bottom: 5vh;
             display: flex;
@@ -441,6 +385,9 @@ body{
                 border-top: 2px solid #000;
                 margin:6vh 0 3vh; 
                 width: 100%;
+            }
+            .form_button{
+                margin-right: 2vw;
             }
             .extra_information{
                 width: 100%;
@@ -463,8 +410,8 @@ body{
     .page_container{
 
         &.img_load_animation{
-            width: 80vw;
-
+            width: 75vw;
+            transform: translate(25vw,0);
         }
     }
 }
