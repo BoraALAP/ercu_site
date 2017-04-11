@@ -2,7 +2,7 @@
 $( document ).ready(function() {
 	var header = $(".enterence");
     var page_container = $(".page_container");
-    mql = window.matchMedia("(min-width: 768px)");
+    
 ///////// Page Load Animation
     header.addClass("enterence_open");
     page_container.addClass("img_load_animation");
@@ -34,14 +34,18 @@ $( document ).ready(function() {
 
 
 ///////// Arrow Button pushing left to start exploring
-	// $('.white_overlay').hover(function(){
-	// 	$('html, body').scrollLeft += 20;
+	$('.white_overlay').on('mouseenter', function rscroll(){
+		$('body').animate({
+      		scrollLeft: '+=25'
+    	}, 10, rscroll);
+	 });
+	$('.white_overlay').on('mouseleave', function() {
+		$('body').stop();
+	});
+	// $('.svg').hover(function(){	
+	// 	$('html, body').animate({scrollLeft : 400},2500);
 	// 	return false;
 	// });
-	$('.svg').hover(function(){	
-		$('html, body').animate({scrollLeft : 400},2500);
-		return false;
-	});
 
 ///////// Arrow Button pushing left to start exploring End
 });
