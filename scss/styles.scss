@@ -337,12 +337,10 @@ body{
             align-self: flex-start;
         }
         .img_box_2{
-            align-self: flex-end;
-
+            align-self: center;
         }
         .img_box_3{
-            align-self: center;
-            
+            align-self: flex-end;
         }
     }
     
@@ -361,11 +359,11 @@ body{
         }
     .contact_about_section{
         display: flex;
-        margin-top: 10vh;
+        margin: 10vh;
         flex: 1;
         transition-delay: 0.5s; 
         flex-direction: column; 
-        margin-bottom: 10vh;
+        margin: 10vh;
         @include MQ (L){
             flex-direction: row;
         }
