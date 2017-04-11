@@ -74,7 +74,7 @@ body{
 
 
 .enterence{ 
-    background: $white;
+    background: $black;
     height:20vh;
     width: 100vw;
     position: fixed;
@@ -101,7 +101,7 @@ body{
         transition: all .8s $transition-load 0.3s;
         h1{
             display: flex;
-            color:$black;
+            color:$white;
             span{ 
                 transition: all .5s $transition-load; 
                 opacity: 1;
@@ -330,7 +330,7 @@ body{
             }
             .img{
                 width: auto;
-                height: 70vh;
+                height: 60vh;
             }
         }
         .img_box_1{
