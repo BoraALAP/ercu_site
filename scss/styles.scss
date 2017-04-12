@@ -354,9 +354,14 @@ body{
 #contact_about{
     overflow: auto;
     overflow-x: hidden;
+    .enterence_open{
+        @include MQ(M){
+                width: 25vw;
+        }    
+    }
     .white_overlay{
             display: none;
-        }
+    }
     .contact_about_section{
         display: flex;
         margin: 10vh;
