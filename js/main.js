@@ -36,7 +36,7 @@ $( document ).ready(function() {
 ///////// Arrow Button pushing left to start exploring
 	$('.white_overlay').on('mouseenter', function rscroll(){
 		$('body').animate({
-      		scrollLeft: '+=25'
+      		scrollLeft: '+=5'
     	}, 10, rscroll);
 	 });
 	$('.white_overlay').on('mouseleave', function() {

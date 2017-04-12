@@ -206,7 +206,7 @@ body{
             opacity: 1;
         }
         @include MQ(M){
-            width: 25vw;
+            width: 35vw;
         }  
         nav{
             opacity:1;
@@ -303,12 +303,12 @@ body{
 .page_container{
     display: flex;
     transition: all 2s $transition-load ;
-    transform: translate(100vw,0);
+    transform: translate(100vw,0); 
     &.enterence_short_img{
         transform:translate(30vw,0);
     }
     &.img_load_animation{
-        transform: translate(35vw,0);
+        transform: translate(45vw,0);
     }
     .img_container{
         display: flex;
